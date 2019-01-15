@@ -1,8 +1,8 @@
 from __future__ import (absolute_import, division, print_function, unicode_literals)
 
-from .supervised_learner import SupervisedLearner
-from .baseline_learner import BaselineLearner
-from .matrix import Matrix
+from baseline_learner import BaselineLearner
+from perceptron_learner import PerceptronLearner
+from matrix import Matrix
 import random
 import argparse
 import time
@@ -23,10 +23,10 @@ class MLSystemManager:
         """
         modelmap = {
             "baseline": BaselineLearner(),
-            #"perceptron": PerceptronLearner(),
-            #"neuralnet": NeuralNetLearner(),
-            #"decisiontree": DecisionTreeLearner(),
-            #"knn": InstanceBasedLearner()
+            "perceptron": PerceptronLearner(),
+            # "neuralnet": NeuralNetLearner(),
+            # "decisiontree": DecisionTreeLearner(),
+            # "knn": InstanceBasedLearner()
         }
         if model in modelmap:
             return modelmap[model]

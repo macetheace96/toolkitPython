@@ -23,7 +23,7 @@ def mode(a, axis=0):
     return mostfrequent, oldcounts
 
 
-class Matrix:
+class NewMatrix(np.ndarray):
 
     """
     Unlike the Matrix class defined in toolkit (C++) and toolkitJava,
@@ -169,6 +169,9 @@ class Matrix:
     def col(self, n):
         """Get the specified column"""
         return [row[n] for row in self.data]
+
+    def to_numpy(self):
+        return np.asarray(self.data)
 
     def get(self, row, col):
         """
